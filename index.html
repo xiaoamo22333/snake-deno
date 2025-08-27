@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deno 贪吃蛇</title>
+    <!-- 链接到我们的 CSS 样式文件 -->
+    <link rel="stylesheet" href="style.css">
+    <!-- 引入 Google Fonts 字体，让界面更好看 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;700&display=swap"
+      rel="stylesheet"
+    >
+  </head>
+  <body>
+    <div class="game-container">
+      <div class="header">
+        <h1>贪吃蛇</h1>
+        <div class="score-board">
+          <span>得分:</span>
+          <span id="score">0</span>
+        </div>
+      </div>
+
+      <!-- 游戏画布，所有的绘制都在这里进行 -->
+      <canvas id="gameCanvas" width="400" height="400"></canvas>
+
+      <!-- 新增的控制面板 -->
+      <div class="controls-panel">
+        <div class="control-group">
+          <label for="difficulty">难度:</label>
+          <select id="difficulty">
+            <option value="150">简单</option>
+            <option value="100" selected>中等</option>
+            <option value="60">困难</option>
+          </select>
+        </div>
+        <div class="control-group">
+          <label>模式:</label>
+          <button id="theme-toggle">切换模式</button>
+        </div>
+      </div>
+
+      <div id="instructions">使用方向键 (↑, ↓, ←, →) 控制</div>
+
+      <!-- 游戏结束时的提示信息 -->
+      <div id="gameOver" class="hidden">
+        <h2>游戏结束</h2>
+        <button id="restartButton">重新开始</button>
+      </div>
+    </div>
+    <!-- 链接到我们的 JavaScript 逻辑文件，defer 属性确保在 HTML 解析完毕后执行 -->
+    <script src="script.js" defer></script>
+  </body>
+</html>
